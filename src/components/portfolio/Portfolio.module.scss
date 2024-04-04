@@ -1,5 +1,68 @@
-.container {
-    width: 100%;
-    height: 100vh;
-    background-color: rgb(12, 59, 179);
+@import "../../styles/mixin/Mixin.scss";
+@import "../../styles/variable/Variable.module.scss";
+
+.wrapper {
+    @include section;
+}
+
+
+.flexContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        font-size: 50px;
+    }
+
+    ul {
+        margin: 10px;
+        display: flex;
+    }
+
+    .itemContainer {
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .item {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            flex-grow: 1;
+            border-radius: 20px;
+            border: 1px solid rgb(240, 239, 239);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.5s ease;
+
+            &:hover {
+                background-color: $main-color;
+
+                .imgContainer {
+                    opacity: 0.2;
+                    z-index: 1;
+                }
+            }
+
+            .imgContainer {
+                width: 80%;
+                height: 80%;
+                position: relative;
+                z-index: 1;
+
+            }
+
+            h3 {
+                position: absolute;
+                font-size: 20px;
+            }
+        }
+    }
 }

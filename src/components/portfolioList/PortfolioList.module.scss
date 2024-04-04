@@ -1,0 +1,14 @@
+@import "../../styles/variable/Variable.module.scss";
+
+.list {
+    font-size: 14px;
+    margin: 50px;
+    padding: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &.active {
+        color: #fff;
+        background-color: $main-color;
+    } 
+}

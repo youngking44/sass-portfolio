@@ -1,0 +1,8 @@
+/**************** SECTION ***************/
+@mixin section($color: #000, $bg: #fff) {
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px 0px;
+    color: $color;
+    background-color: $bg;
+}
