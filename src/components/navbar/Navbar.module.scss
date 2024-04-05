@@ -1,4 +1,5 @@
 @import "../../styles/variable/Variable.module.scss";
+@import "../../styles/mixin/Mixin.scss";
 
 .header {
     width: 100%;
@@ -57,6 +58,10 @@
             display: flex;
             align-items: center;
             margin-right: 30px;
+
+            @include mobile {
+                display: none;
+            }
 
             .icon {
                 font-size: 18px;

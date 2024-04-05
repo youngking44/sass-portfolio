@@ -1,3 +1,5 @@
+@import "../../styles/mixin/Mixin.scss";
+
 .wrapper {
     width: 100%;
     background-color: #fff;
@@ -10,9 +12,20 @@
     display: flex;
     gap: 40px;
 
+    @include mobile {
+       flex-direction: column;
+       justify-content: center;
+    }
+
     .left {
         flex: 1;
         overflow: hidden;
+
+        @include mobile {
+            display: flex;
+            justify-content: center;
+            overflow: visible;
+        }
 
         .avatar {
             width: 110%;
@@ -24,10 +37,19 @@
             float: right;
             background-color: crimson;
 
+            @include mobile {
+                width: 250px;
+                height: 250px;
+            }
+
             .imgContainer {
                 width: 80%;
                 height: 80%;
                 position: relative;
+
+                img {
+                    object-fit: contain;
+                }
             }
         }
     }
@@ -43,6 +65,10 @@
             flex-direction: column;
             justify-content: center;
 
+            @include mobile {
+               align-items: center;
+            }
+
             .introText {
                 font-size: 35px;
                 font-weight: 500;
@@ -51,10 +77,18 @@
 
             h1 {
                 font-size: 60px;
+
+                @include mobile {
+                    font-size: 40px;
+                }
             }
 
             h3 {
                 font-size: 30px;
+
+                @include mobile {
+                    font-size: 20px;
+                }
 
                 span {
                     font-size: inherit;
@@ -74,6 +108,10 @@
                 100% {
                     opacity: 0;
                 }
+            }
+
+            @include mobile {
+                display: none;
             }
         }
     }

@@ -1,5 +1,107 @@
-.container {
-    width: 100%;
-    height: 100vh;
-    background-color: rgb(225, 118, 106);
+@import "../../styles/mixin/Mixin.scss";
+
+.wrapper {
+    @include section;
+
+    .flexContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .cardContainer {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+
+            @include mobile {
+                align-items: stretch;
+            }
+
+            .card {
+                width: 250px;
+                min-height: 70%;
+                border-radius: 10px;
+                box-shadow: 0px 0px 15px -8px black;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                padding: 20px;
+                transition:  all 1s ease;
+                cursor: pointer;
+
+                @include mobile {
+                    flex: 1;
+                    height: auto;
+                }
+
+                &:nth-child(2) {
+                    width: 300px;
+                    height: 75%;
+                }
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+
+                .top {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+
+                    .imgContainer {
+                        position: relative;
+                        
+                        &.left, 
+                        &.right {
+                            width: 30px;
+                            height: 25px;
+                        }
+
+                        &.user {
+                            width: 50px;
+                            height: 50px;
+                            margin: 0 30px;
+                            
+                            img {    
+                                border-radius: 50%;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+                }
+
+                .center {
+                   margin: 20px 0;
+                   padding: 10px;
+                   border-radius: 10px;
+                   background-color: rgb(250, 244, 245); 
+                }
+
+                .bottom {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+
+                    h3 {
+                        margin-bottom: 5px;
+                    }
+
+                    h4 {
+                        color: gray
+                    }
+
+                }
+            }
+        }
+    }
 }
